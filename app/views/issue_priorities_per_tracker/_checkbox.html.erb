@@ -1,0 +1,1 @@
+<%= check_box_tag("input_relation_#{tracker.id}_#{issue_priority.id}", "relation_#{tracker.id}_#{issue_priority.id}", issue_priority_included, :onclick => remote_function(:update => "relation_#{tracker.id}_#{issue_priority.id}", :url => { :action => issue_priority_included ? :unlink : :link, :tracker => tracker, :issue_priority => issue_priority })) %>

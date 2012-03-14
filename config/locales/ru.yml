@@ -1,3 +1,5 @@
 # Russian strings go here for Rails i18n
 ru:
   label_issue_priorities_per_tracker: "Трекеры и приоритеты"
+  label_link_issue_priority_to_tracker: "Привязать приоритет к трекеру"
+  label_unlink_issue_priority_from_tracker: "Отвязать приоритет от трекера"

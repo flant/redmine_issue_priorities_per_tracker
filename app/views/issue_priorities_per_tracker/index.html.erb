@@ -1,0 +1,40 @@
+<h2><%=l(:label_issue_priorities_per_tracker)%></h2>
+
+<table class="list tracker-issue-priorities">
+<thead>
+  <tr>
+    <th align="left">
+      <%=l(:label_tracker_plural)%>
+    </th>
+    <th align="center" colspan="<%= @issue_priorities.length %>"><%=l(:enumeration_issue_priorities)%></th>
+  </tr>
+  <tr>
+    <td></td>
+    <% @issue_priorities.each do |issue_priority| %>
+    <td width="<%= 75 / @issue_priorities.length %>%" align="center">
+      <%=h issue_priority.name %>
+    </td>
+    <% end %>
+  </tr>
+</thead>
+
+<tbody>
+  <% @trackers.each do |tracker| %>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td>
+      <%=h tracker.name %>
+    </td>
+    <% issue_priorities = tracker.issue_priorities -%>
+    <% @issue_priorities.each do |issue_priority| -%>
+      <% issue_priority_included = issue_priorities.include?(issue_priority) %>
+      <td align="center" id="<%= "relation_#{tracker.id}_#{issue_priority.id}" -%>">
+    	<%= render "checkbox", :tracker => tracker, :issue_priority => issue_priority, :issue_priority_included => issue_priority_included %>
+      </td>
+    <% end -%>
+  </tr>
+  <% end %>
+</tbody>
+
+</table>
+
+
