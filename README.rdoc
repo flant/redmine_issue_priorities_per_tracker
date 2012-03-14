@@ -1,0 +1,3 @@
+= Redmine issue priorities per tracker plugin
+
+This is a plugin for Redmine which allows to define issue priorities per tracker.
