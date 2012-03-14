@@ -9,7 +9,7 @@ Redmine::Plugin.register :redmine_issue_priorities_per_tracker do
   author 'Andrey Kolashtov <andrey.kolashtov@flant.ru>'
   description 'This is a plugin for Redmine which allows to define issue priorities per tracker.'
   version '0.0.1'
-  url 'https://flant@github.com/flant/redmine_issue_priorities_per_tracker.git'
+  url 'https://github.com/flant/redmine_issue_priorities_per_tracker'
   author_url 'https://github.com/kolashtov'
   
   menu :admin_menu, :issue_priorities_per_tracker, { :controller => 'issue_priorities_per_tracker' }, :caption => :label_issue_priorities_per_tracker

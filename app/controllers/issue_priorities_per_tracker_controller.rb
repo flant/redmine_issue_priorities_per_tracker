@@ -11,7 +11,6 @@ class IssuePrioritiesPerTrackerController < ApplicationController
   end
 
   def link
-    @relation = IssuePrioritiesTracker.find(:first, :conditions => {:tracker_id => @tracker.id, :issue_priority_id => @issue_priority.id})
     if @relation.blank?
       @relation = IssuePrioritiesTracker.new
       @relation.tracker = @tracker
@@ -22,7 +21,6 @@ class IssuePrioritiesPerTrackerController < ApplicationController
   end
 
   def unlink
-    @relation = IssuePrioritiesTracker.find(:first, :conditions => {:tracker_id => @tracker.id, :issue_priority_id => @issue_priority.id})
     if not @relation.blank?
       @relation.destroy
     end
@@ -34,6 +32,7 @@ class IssuePrioritiesPerTrackerController < ApplicationController
   def find_tracker_and_issue_priority
     @tracker = Tracker.find(params[:tracker])
     @issue_priority = IssuePriority.find(params[:issue_priority])
+    @relation = IssuePrioritiesTracker.find(:first, :conditions => {:tracker_id => @tracker.id, :issue_priority_id => @issue_priority.id})
   rescue ActiveRecord::RecordNotFound
     render_404
   end
