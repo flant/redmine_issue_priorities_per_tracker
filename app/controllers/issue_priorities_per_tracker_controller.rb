@@ -7,7 +7,7 @@ class IssuePrioritiesPerTrackerController < ApplicationController
 
   def index
     @trackers = Tracker.all
-    @issue_priorities = IssuePriority.find(:all)
+    @issue_priorities = IssuePriority.all
   end
 
   def link
