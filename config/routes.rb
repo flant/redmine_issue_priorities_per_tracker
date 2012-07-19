@@ -1,4 +1,2 @@
-ActionController::Routing::Routes.draw do |map|
-  map.connect 'admin/issue_priorities_per_tracker/:action/:id', :controller => 'issue_priorities_per_tracker'
-end
-
+match 'admin/issue_priorities_per_tracker/:action' => 'issue_priorities_per_tracker'
+match 'admin/issue_priorities_per_tracker' => 'issue_priorities_per_tracker#index'

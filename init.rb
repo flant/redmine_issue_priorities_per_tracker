@@ -2,7 +2,6 @@ require 'redmine'
 require File.dirname(__FILE__) + '/lib/tracker_patch.rb'
 require File.dirname(__FILE__) + '/lib/issues_controller_patch.rb'
 require File.dirname(__FILE__) + '/lib/hooks.rb'
-require 'dispatcher'
 
 Redmine::Plugin.register :redmine_issue_priorities_per_tracker do
   name 'Redmine Issue Priorities Per Tracker plugin'
@@ -18,7 +17,7 @@ end
 # Add patch
 # Using dispatcher cause of recreation of model classes without patch on second request in development environment.
 # With dispatcher patch applies on model classes on every request.
-Dispatcher.to_prepare do
+ActionDispatch::Callbacks.to_prepare do 
   Tracker.send(:include, TrackerPatch)
   IssuesController.send(:include, IssuesControllerPatch)
 end
