@@ -1,5 +1,5 @@
 class CreateIssuePrioritiesTrackers < ActiveRecord::Migration
-  def self.change
+  def change
     create_table :issue_priorities_trackers do |t|
       t.references :issue_priority, :nil => false
       t.references :tracker, :nil => false
