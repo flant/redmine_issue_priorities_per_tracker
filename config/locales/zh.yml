@@ -1,0 +1,5 @@
+# Simplified Chinese strings go here for Rails i18n
+zh:
+  label_issue_priorities_per_tracker: "跟踪类型与问题优先级关联管理"
+  label_link_issue_priority_to_tracker: "在跟踪类型上关联问题优先级"
+  label_unlink_issue_priority_from_tracker: "取消跟踪类型上关联的问题优先级"
